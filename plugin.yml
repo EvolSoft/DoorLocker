@@ -1,0 +1,44 @@
+name: DoorLocker
+main: DoorLocker\Main
+version: "1.0"
+api: [1.8.0]
+load: STARTUP
+author: EvolSoft
+description: Lock/Unlock Doors.
+website: https://www.evolsoft.tk
+
+commands:
+ doorlocker:
+   aliases: [dhlock, dhl, doorock, dl]
+   description: DoorLocker commands.
+ lockdoor:
+   description: Lock a Door.
+ unlockdoor:
+   description: Unlock a Door.
+permissions:
+ doorlocker:
+  default: true
+  description: DoorLocker permissions.
+  children:
+   doorlocker.bypass:
+    default: op
+    description: Bypass Door locker.
+   doorlocker.commands:
+    default: true
+    description: DoorLocker commands permissions.
+    children:
+      doorlocker.commands.help:
+       default: true
+       description: DoorLocker command Help permission.
+      doorlocker.commands.info:
+       default: op
+       description: DoorLocker command Info permission.
+      doorlocker.commands.reload:
+       default: op
+       description: DoorLocker command Reload permission.
+      doorlocker.commands.lockdoor:
+       default: true
+       description: DoorLocker command LockDoor permission.
+      doorlocker.commands.unlockdoor: 
+       default: true
+       description: DoorLocker command UnlockDoor permission.
